@@ -1,7 +1,7 @@
 pipeline {
     agent { node { label "maven-sonarqube-node" } }   
     parameters {
-      choice(name: 'aws_account',choices: ['999568710647', '4568366404742', '922266408974','576900672829'], description: 'aws account hosting image registry')
+      choice(name: 'aws_account',choices: ['637423546337', '4568366404742', '922266408974','576900672829'], description: 'aws account hosting image registry')
       choice(name: 'Environment', choices: ['Dev', 'QA', 'UAT', 'Prod'], description: 'Target environment for deployment')
       string(name: 'ecr_tag', defaultValue: '1.36.0', description: 'Assign the ECR tag version for the build')
     }
@@ -68,13 +68,13 @@ pipeline {
 
     stage('7. Email Notification') {
       steps {
-        mail bcc: 'fusisoft@gmail.com', body: '''Build is Over. Check the application using the URL below:
+        mail bcc: 'nsuhfabiola@gmail.com', body: '''Build is Over. Check the application using the URL below:
          https://address.dominionsystem.org
          Let me know if the changes look okay.
          Thanks,
          Dominion System Technologies,
-         +1 (313) 413-1477''', 
-         subject: 'Application was Successfully Deployed!!', to: 'fusisoft@gmail.com'
+         +1 (859) 640-7703''', 
+         subject: 'Application was Successfully Deployed!!', to: 'nsuhfabiola@gmail.com'
       }
     }
   }
