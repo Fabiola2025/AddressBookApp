@@ -18,7 +18,7 @@ spec:
   - host:
     http:
       paths:
-      - path:/static/*
+      - path: /static/*
         pathType: Prefix
         backend:
           service:
