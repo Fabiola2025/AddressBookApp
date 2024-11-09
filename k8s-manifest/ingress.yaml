@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/healthcheck-port: "8080"
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health # Adjust if needed
-    alb.ingress.kubernetes.io/load-balancer-name: addressbook-app
+    alb.ingress.kubernetes.io/load-balancer-name: addressbook-alb
     alb.ingress.kubernetes.io/success-codes: "200"
 spec:
   ingressClassName: alb
@@ -18,7 +18,7 @@ spec:
   - host:
     http:
       paths:
-      - path: /static/*
+      - path:
         pathType: Prefix
         backend:
           service:
