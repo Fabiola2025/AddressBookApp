@@ -18,7 +18,7 @@ spec:
   - host:
     http:
       paths:
-      - path:
+      - path:/addressbook
         pathType: Prefix
         backend:
           service:
